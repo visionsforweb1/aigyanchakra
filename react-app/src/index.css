@@ -1602,3 +1602,6 @@
 @media (max-width: 480px) {
   .six div i { height: 34px; display: flex; align-items: center; justify-content: flex-start; }
 }
+
+/* speakers card: keep a gap above "View All Speakers" now that the dots are gone */
+.spk-wrap { margin-bottom: 16px; }

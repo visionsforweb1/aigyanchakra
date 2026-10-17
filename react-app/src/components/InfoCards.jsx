@@ -132,9 +132,6 @@ export default function InfoCards({ onRegister }) {
               ))}
             </div>
           </div>
-          <div className="dots">
-            <b>●</b> ● ● ●
-          </div>
           <a
             href="#"
             className="btn btn-outline btn-sm block"
