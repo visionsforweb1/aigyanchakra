@@ -1605,3 +1605,40 @@
 
 /* speakers card: keep a gap above "View All Speakers" now that the dots are gone */
 .spk-wrap { margin-bottom: 16px; }
+
+/* Prime Minister banner on phones only: use his photo (img4.png) as the background */
+@media (max-width: 480px) {
+  .vision.pm {
+    background-image: url("/img/img4.png");
+    background-size: cover;
+    background-position: center top;
+    background-color: #fbe3c8;
+    min-height: 430px;
+  }
+  .vision.pm .body {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.86) 38%, rgba(255,255,255,.94) 100%);
+    padding-top: 90px;
+  }
+}
+@media (max-width: 320px) {
+  .vision.pm { min-height: 410px; }
+}
+
+/* PM banner on phones, v2: whole photo visible on top, message card underneath */
+@media (max-width: 480px) {
+  .vision.pm {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 570px;
+  }
+  .vision.pm .body {
+    padding-top: 48px;
+    background: linear-gradient(180deg, rgba(251,227,200,0) 0%, rgba(255,255,255,.92) 26%, #fff 100%);
+  }
+}
+@media (max-width: 320px) {
+  .vision.pm { min-height: 600px; }
+}
+
+@media (max-width: 320px) { .vision.pm { min-height: 545px; } }
