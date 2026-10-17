@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+﻿import { useState } from "react";
+import PersonPopup from "./PersonPopup.jsx";
 
 const speakers = [
   {
@@ -40,17 +41,6 @@ const attendees = [
 
 export default function InfoCards({ onRegister }) {
   const [person, setPerson] = useState(null);
-
-  useEffect(() => {
-    if (!person) return;
-    const onKey = (e) => e.key === "Escape" && setPerson(null);
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [person]);
 
   return (
     <div className="container">
@@ -185,31 +175,7 @@ export default function InfoCards({ onRegister }) {
         </div>
       </div>
 
-      {person && (
-        <div className="pop-overlay" onMouseDown={() => setPerson(null)}>
-          <div
-            className="pop"
-            role="dialog"
-            aria-modal="true"
-            aria-label={person.name}
-            onMouseDown={(e) => e.stopPropagation()}>
-            <button
-              className="rf-close"
-              onClick={() => setPerson(null)}
-              aria-label="Close">
-              ×
-            </button>
-            <img src={person.img} alt={person.name} />
-            <div className="pop-body">
-              <h3>{person.name}</h3>
-              <span className="pop-tag">{person.note}</span>
-              <blockquote>
-                <i className="fa-solid fa-quote-left"></i> {person.message}
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      )}
+      <PersonPopup person={person} onClose={() => setPerson(null)} />
     </div>
   );
 }
