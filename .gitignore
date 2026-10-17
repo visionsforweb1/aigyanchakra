@@ -1,0 +1,10 @@
+﻿node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+.vercel
+# legacy plain-HTML version (the React app in react-app/ replaces it)
+/index.html
+/img/
