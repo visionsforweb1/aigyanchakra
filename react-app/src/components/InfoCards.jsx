@@ -105,12 +105,6 @@ export default function InfoCards({ onRegister }) {
           </h3>
           <div className="sub">Industry Leaders | AI Experts | Academicians</div>
           <div className="spk-wrap">
-            <button className="spk-arrow l" aria-label="Previous">
-              ‹
-            </button>
-            <button className="spk-arrow r" aria-label="Next">
-              ›
-            </button>
             <div className="speakers">
               {speakers.map((s) => (
                 <div key={s.name}>
