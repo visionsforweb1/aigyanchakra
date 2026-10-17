@@ -88,9 +88,6 @@ export default function Sponsors() {
             ›
           </button>
         </div>
-        <div className="dots" style={{ marginTop: 14 }}>
-          <b>●</b> ● ● ● ● ●
-        </div>
       </div>
     </section>
   );
