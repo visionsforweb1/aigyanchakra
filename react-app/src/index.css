@@ -1642,3 +1642,22 @@
 }
 
 @media (max-width: 320px) { .vision.pm { min-height: 545px; } }
+
+/* Chief Minister banner on phones only: use his photo (img5.png), same layout as the PM banner */
+@media (max-width: 480px) {
+  .vision.cm {
+    background-image: url("/img/img5.png");
+    background-color: #fbe3c8;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 570px;
+  }
+  .vision.cm .body {
+    padding-top: 48px;
+    background: linear-gradient(180deg, rgba(251,227,200,0) 0%, rgba(255,255,255,.92) 26%, #fff 100%);
+  }
+}
+@media (max-width: 320px) {
+  .vision.cm { min-height: 560px; }
+}
