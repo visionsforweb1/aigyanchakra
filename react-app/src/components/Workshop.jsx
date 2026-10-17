@@ -48,6 +48,15 @@ const PM_MESSAGE = {
     "India will develop AI for the good of humanity and empower our youth during Amrit Kaal.",
 };
 
+// Pop-up shown by "Know More" (desktop only). Replace `message` with the full text.
+const CM_MESSAGE = {
+  img: "/img/img5.png",
+  name: "Hon'ble Chief Minister Maharashtra",
+  note: "Vision for AI-driven Maharashtra",
+  message:
+    "Maharashtra will lead India's AI transformation through innovation, industry collaboration and youth empowerment.",
+};
+
 export default function Workshop() {
   const [person, setPerson] = useState(null);
 
@@ -125,7 +134,15 @@ export default function Workshop() {
                 </q>
                 <small>— Hon'ble Chief Minister, Maharashtra</small>
               </blockquote>
-              <a href="#" className="btn btn-primary btn-sm">
+              <a
+                href="#"
+                className="btn btn-primary btn-sm"
+                onClick={(e) => {
+                  // the pop-up is for desktop only; on phones/tablets the button does nothing
+                  e.preventDefault();
+                  if (window.matchMedia("(min-width: 769px)").matches)
+                    setPerson(CM_MESSAGE);
+                }}>
                 Know More →
               </a>
             </div>
