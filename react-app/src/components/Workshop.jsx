@@ -1,6 +1,3 @@
-import { useState } from "react";
-import PersonPopup from "./PersonPopup.jsx";
-
 const steps = [
   {
     icon: <img src="/img/cyber-%20brain%20.png" alt="AI Fundamentals" />,
@@ -39,27 +36,7 @@ const steps = [
   },
 ];
 
-// Pop-up shown by "Read Full Message". Replace `message` with the full text when you have it.
-const PM_MESSAGE = {
-  img: "/img/img4.png",
-  name: "Hon'ble Prime Minister's AI Vision",
-  note: "Message from the Hon'ble Prime Minister of India",
-  message:
-    "India will develop AI for the good of humanity and empower our youth during Amrit Kaal.",
-};
-
-// Pop-up shown by "Know More" on the Maharashtra banner. Replace `message` with the full text.
-const CM_MESSAGE = {
-  img: "/img/img5.png",
-  name: "Maharashtra's AI Vision",
-  note: "Message from the Hon'ble Chief Minister, Maharashtra",
-  message:
-    "Maharashtra will lead India's AI transformation through innovation, industry collaboration and youth empowerment.",
-};
-
 export default function Workshop() {
-  const [person, setPerson] = useState(null);
-
   return (
     <section className="dark" id="workshop">
       <div className="container">
@@ -111,13 +88,7 @@ export default function Workshop() {
                 </q>
                 <small>— Hon'ble Prime Minister of India</small>
               </blockquote>
-              <a
-                href="#"
-                className="btn btn-orange btn-sm"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPerson(PM_MESSAGE);
-                }}>
+              <a href="#" className="btn btn-orange btn-sm">
                 Read Full Message →
               </a>
             </div>
@@ -132,21 +103,13 @@ export default function Workshop() {
                 </q>
                 <small>— Hon'ble Chief Minister, Maharashtra</small>
               </blockquote>
-              <a
-                href="#"
-                className="btn btn-primary btn-sm"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPerson(CM_MESSAGE);
-                }}>
+              <a href="#" className="btn btn-primary btn-sm">
                 Know More →
               </a>
             </div>
           </div>
         </div>
       </div>
-
-      <PersonPopup person={person} onClose={() => setPerson(null)} />
     </section>
   );
 }
